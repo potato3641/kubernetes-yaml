@@ -1,0 +1,45 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: people-ingress
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+    nginx.ingress.kubernetes.io/ssl-redirect: "true"
+    ingressclass.kubernetes.io/is-default-class: "true"
+spec:
+  tls:
+    - hosts:
+      - people42.com
+      secretName: my-tls-secret
+  rules:
+  - host: people42.com
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: fe42-svc
+            port:
+              number: 80
+      - path: /be42/
+        pathType: Prefix
+        backend:
+          service:
+            name: be42-svc
+            port:
+              number: 8080
+      - path: /redis/
+        pathType: Prefix
+        backend:
+          service:
+            name: redis-svc
+            port:
+              number: 6666
+      - path: /mariadb/
+        pathType: Prefix
+        backend:
+          service:
+            name: mariadb-svc
+            port:
+              number: 3333

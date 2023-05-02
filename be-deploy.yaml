@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: be42-deploy
+spec:
+  selector:
+    matchLabels:
+      service: be42
+  template:
+    metadata:
+      labels:
+        service: be42
+    spec:
+      containers:
+        - name: be42
+          image: 15.164.102.222:1588/return/be
+          ports:
+            - containerPort: 8080
+              protocol: TCP

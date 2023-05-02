@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mariadb-deploy
+spec:
+  selector:
+    matchLabels:
+      service: mariadb
+  template:
+    metadata:
+      labels:
+        service: mariadb
+    spec:
+      containers:
+        - name: mariadb
+          image: mariadb:10.11.2
+          ports:
+            - containerPort: 3333
+              protocol: TCP
+          env:
+            - name: TZ
+              value: "Asia/Seoul"
+            - name: MARIADB_RANDOM_ROOT_PASSWORD
+              value: "213748ry127howeq8hfoq348fhawer8tjwrefgohiaewogihq34y7wert5"
+            - name: MARIADB_DATABASE
+              value: "fourtytwo"
+            - name: MARIADB_USER
+              value: "fourtytwo"
+            - name: MARIADB_PASSWORD
+              value: "findromance!"
+          volumeMounts:
+            - name: mariadb-storage
+              mountPath: /var/lib/mysql
+        volumes:
+          - name: mariadb-storage
+            hostPath:
+              path: /data/mariadb

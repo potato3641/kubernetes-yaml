@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: redis-deploy
+spec:
+  selector:
+    matchLabels:
+      service: redis
+  template:
+    metadata:
+      labels:
+        service: redis
+    spec:
+      containers:
+        - name: redis
+          image: redis
+          ports:
+            - containerPort: 6666
+              protocol: TCP
+          env:
+            - name: TZ
+              value: "Asia/Seoul"
+          command: ["redis-server", "--requirepass", "findromance!", "--port", "6379"]
