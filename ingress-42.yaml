@@ -8,10 +8,10 @@ metadata:
 spec:
   tls:
     - hosts:
-      - people42.com
+      - kube.people42.com
       secretName: my-tls-secret
   rules:
-  - host: people42.com
+  - host: kube.people42.com
     http:
       paths:
       - path: /
