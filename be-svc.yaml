@@ -5,6 +5,7 @@ metadata:
 spec:
   ports:
     - name: be-port
+      port: 8080
       targetPort: 31001
   selector:
     service: be42

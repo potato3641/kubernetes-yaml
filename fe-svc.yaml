@@ -5,6 +5,7 @@ metadata:
 spec:
   ports:
     - name: fe-port
+      port:80
       targetPort: 31000
   selector:
     service: fe42

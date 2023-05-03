@@ -15,9 +15,4 @@ spec:
         - name: fe42
           image: 15.164.102.222:1588/return/fe
           ports:
-            - name: http
-              containerPort: 80
-              protocol: TCP
-            - name: https
-              containerPort: 443
-              protocol: TCP
+            - containerPort: 80

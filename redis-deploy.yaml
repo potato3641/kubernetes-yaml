@@ -16,7 +16,6 @@ spec:
           image: redis
           ports:
             - containerPort: 6666
-              protocol: TCP
           env:
             - name: TZ
               value: "Asia/Seoul"

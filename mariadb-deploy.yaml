@@ -20,7 +20,6 @@ spec:
           image: mariadb:10.11.2
           ports:
             - containerPort: 3333
-              protocol: TCP
           env:
             - name: TZ
               value: "Asia/Seoul"
