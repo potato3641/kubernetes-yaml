@@ -31,7 +31,7 @@ spec:
           volumeMounts:
             - name: mariadb-storage
               mountPath: /var/lib/mysql
-        volumes:
-          - name: mariadb-storage
-            hostPath:
-              path: /data/mariadb
+      volumes:
+        - name: mariadb-storage
+          hostPath:
+            path: /data/mariadb
