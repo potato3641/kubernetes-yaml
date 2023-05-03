@@ -3,6 +3,7 @@ kind: Ingress
 metadata:
   name: people-ingress
   annotations:
+    metadata.annotations.kubernetes.io/ingress.class: "nginx"
     nginx.ingress.kubernetes.io/rewrite-target: /
     nginx.ingress.kubernetes.io/ssl-redirect: "true"
     ingressclass.kubernetes.io/is-default-class: "true"
@@ -15,31 +16,31 @@ spec:
   - host: kube.people42.com
     http:
       paths:
-      - path: /be42/
-        pathType: Prefix
-        backend:
-          service:
-            name: be42-service
-            port:
-              number: 31001
-      - path: /redis/
-        pathType: Prefix
-        backend:
-          service:
-            name: redis-service
-            port:
-              number: 31003
-      - path: /mariadb/
-        pathType: Prefix
-        backend:
-          service:
-            name: mariadb-service
-            port:
-              number: 31002
-      - path: /
-        pathType: Prefix
-        backend:
-          service:
-            name: fe42-service
-            port:
-              number: 31000
+        - path: /be42/
+          pathType: Prefix
+          backend:
+            service:
+              name: be42-service
+              port:
+                number: 31001
+        - path: /redis/
+          pathType: Prefix
+          backend:
+            service:
+              name: redis-service
+              port:
+                number: 31003
+        - path: /mariadb/
+          pathType: Prefix
+          backend:
+            service:
+              name: mariadb-service
+              port:
+                number: 31002
+        - path: /
+          pathType: Prefix
+          backend:
+            service:
+              name: fe42-service
+              port:
+                number: 31000

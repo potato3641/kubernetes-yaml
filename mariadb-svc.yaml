@@ -2,11 +2,12 @@ apiVersion: v1
 kind: Service
 metadata:
   name: mariadb-service
+  labels:
+    app: mariadb
 spec:
   ports:
-    - name: mariadb-port
-      port: 3333
+    - port: 3333
       protocol: TCP
-      targetPort: 31002
+      targetPort: 3333
   selector:
     app: mariadb
