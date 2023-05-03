@@ -5,11 +5,11 @@ metadata:
 spec:
   selector:
     matchLabels:
-      service: mariadb
+      app: mariadb
   template:
     metadata:
       labels:
-        service: mariadb
+        app: mariadb
     spec:
       volumes:
         - name: mariadb-storage

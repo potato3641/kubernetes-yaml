@@ -5,11 +5,11 @@ metadata:
 spec:
   selector:
     matchLabels:
-      service: be42
+      app: be42
   template:
     metadata:
       labels:
-        service: be42
+        app: be42
     spec:
       containers:
         - name: be42

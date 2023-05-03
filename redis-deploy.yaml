@@ -5,11 +5,11 @@ metadata:
 spec:
   selector:
     matchLabels:
-      service: redis
+      app: redis
   template:
     metadata:
       labels:
-        service: redis
+        app: redis
     spec:
       containers:
         - name: redis

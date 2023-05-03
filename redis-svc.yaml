@@ -9,4 +9,4 @@ spec:
       protocol: TCP
       targetPort: 31003
   selector:
-    service: redis
+    app: redis

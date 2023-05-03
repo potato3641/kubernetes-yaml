@@ -9,4 +9,4 @@ spec:
       protocol: TCP
       targetPort: 31001
   selector:
-    service: be42
+    app: be42
