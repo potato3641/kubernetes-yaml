@@ -6,6 +6,7 @@ spec:
   type: NodePort
   ports:
     - port: 3333
+      nodePort: 31002
       protocol: TCP
   selector:
     service: mariadb
