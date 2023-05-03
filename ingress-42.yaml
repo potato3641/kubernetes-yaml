@@ -21,7 +21,7 @@ spec:
               service:
                 name: fe42-service
                 port:
-                  number: 80
+                  name: http
           - path: /be42/
             pathType: Prefix
             backend:

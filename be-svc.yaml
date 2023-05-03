@@ -5,7 +5,7 @@ metadata:
   labels:
     app: be42
 spec:
-  type: LoadBalancer
+  type: nodePort
   ports:
     - port: 8080
       protocol: TCP

@@ -5,7 +5,7 @@ metadata:
   labels:
     app: redis
 spec:
-  type: LoadBalancer
+  type: nodePort
   ports:
     - port: 6666
       protocol: TCP

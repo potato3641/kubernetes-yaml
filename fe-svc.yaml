@@ -5,7 +5,7 @@ metadata:
   labels:
     app: fe42
 spec:
-  type: LoadBalancer
+  type: nodePort
   ports:
     - port: 80
       protocol: TCP
