@@ -5,10 +5,9 @@ metadata:
   labels:
     app: mariadb
 spec:
-  type: NodePort
+  type: LoadBalancer
   ports:
     - port: 3333
       protocol: TCP
-      nodePort: 31333
   selector:
     app: mariadb
