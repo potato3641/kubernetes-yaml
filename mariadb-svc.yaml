@@ -5,6 +5,7 @@ metadata:
   labels:
     app: mariadb
 spec:
+  type: NodePort
   ports:
     - port: 3333
       protocol: TCP
