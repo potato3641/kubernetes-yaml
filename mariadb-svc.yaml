@@ -4,7 +4,8 @@ metadata:
   name: mariadb-service
 spec:
   ports:
-    - port: 3333
+    - name: mariadb-port
+      port: 3333
       targetPort: 31002
       protocol: TCP
   selector:

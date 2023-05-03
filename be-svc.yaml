@@ -4,7 +4,8 @@ metadata:
   name: be42-service
 spec:
   ports:
-    - port: 8080
+    - name: be-port
+      port: 8080
       targetPort: 31001
       protocol: TCP
   selector:

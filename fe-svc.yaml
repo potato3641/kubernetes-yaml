@@ -4,7 +4,8 @@ metadata:
   name: fe42-service
 spec:
   ports:
-    - port: 80
+    - name: fe-port
+      port: 80
       targetPort: 31000
       protocol: TCP
   selector:
