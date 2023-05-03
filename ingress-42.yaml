@@ -21,25 +21,25 @@ spec:
           service:
             name: be42-service
             port:
-              number: 8080
+              number: 31001
       - path: /redis/
         pathType: Prefix
         backend:
           service:
             name: redis-service
             port:
-              number: 6666
+              number: 31003
       - path: /mariadb/
         pathType: Prefix
         backend:
           service:
             name: mariadb-service
             port:
-              number: 3333
+              number: 31002
       - path: /
         pathType: Prefix
         backend:
           service:
             name: fe42-service
             port:
-              number: 80
+              number: 31000
