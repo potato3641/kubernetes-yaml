@@ -3,10 +3,9 @@ kind: Service
 metadata:
   name: redis-service
 spec:
-  type: NodePort
   ports:
     - port: 6666
-      nodePort: 31003
+      targetPort: 31003
       protocol: TCP
   selector:
     service: redis

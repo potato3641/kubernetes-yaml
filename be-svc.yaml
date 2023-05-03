@@ -3,10 +3,9 @@ kind: Service
 metadata:
   name: be42-service
 spec:
-  type: NodePort
   ports:
     - port: 8080
-      nodePort: 31001
+      targetPort: 31001
       protocol: TCP
   selector:
     service: be42

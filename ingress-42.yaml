@@ -20,25 +20,25 @@ spec:
           service:
             name: fe42-svc
             port:
-              name: http
+              number: 31000
       - path: /be42/
         pathType: Prefix
         backend:
           service:
             name: be42-svc
             port:
-              name: http
+              number: 31001
       - path: /redis/
         pathType: Prefix
         backend:
           service:
             name: redis-svc
             port:
-              name: http
+              number: 31002
       - path: /mariadb/
         pathType: Prefix
         backend:
           service:
             name: mariadb-svc
             port:
-              name: http
+              number: 31003
