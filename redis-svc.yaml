@@ -5,8 +5,6 @@ metadata:
 spec:
   ports:
     - name: redis-port
-      port: 6666
       targetPort: 31003
-      protocol: TCP
   selector:
     service: redis
