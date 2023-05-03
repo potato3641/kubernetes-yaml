@@ -6,41 +6,41 @@ metadata:
     metadata.annotations.kubernetes.io/ingress.class: "nginx"
     nginx.ingress.kubernetes.io/rewrite-target: /
     nginx.ingress.kubernetes.io/ssl-redirect: "true"
-    ingressclass.kubernetes.io/is-default-class: "true"
+    #ingressclass.kubernetes.io/is-default-class: "true"
 spec:
   tls:
     - hosts:
       - kube.people42.com
       secretName: my-tls-secret
   rules:
-  - host: kube.people42.com
-    http:
-      paths:
-        - path: /be42/
-          pathType: Prefix
-          backend:
-            service:
-              name: be42-service
-              port:
-                number: 8080
-        - path: /redis/
-          pathType: Prefix
-          backend:
-            service:
-              name: redis-service
-              port:
-                number: 6666
-        - path: /mariadb/
-          pathType: Prefix
-          backend:
-            service:
-              name: mariadb-service
-              port:
-                number: 3333
-        - path: /
-          pathType: Prefix
-          backend:
-            service:
-              name: fe42-service
-              port:
-                number: 80
+    - host: kube.people42.com
+      http:
+        paths:
+          - path: /be42/
+            pathType: Prefix
+            backend:
+              service:
+                name: be42-service
+                port:
+                  number: 8080
+          - path: /redis/
+            pathType: Prefix
+            backend:
+              service:
+                name: redis-service
+                port:
+                  number: 6666
+          - path: /mariadb/
+            pathType: Prefix
+            backend:
+              service:
+                name: mariadb-service
+                port:
+                  number: 3333
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: fe42-service
+                port:
+                  number: 80
