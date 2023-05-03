@@ -16,3 +16,4 @@ spec:
           image: 15.164.102.222:1588/return/be
           ports:
             - containerPort: 8080
+              protocol: TCP

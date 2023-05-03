@@ -6,6 +6,7 @@ spec:
   ports:
     - name: be-port
       port: 8080
+      protocol: TCP
       targetPort: 31001
   selector:
     service: be42

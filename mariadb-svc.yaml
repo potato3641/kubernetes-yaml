@@ -6,6 +6,7 @@ spec:
   ports:
     - name: mariadb-port
       port: 3333
+      protocol: TCP
       targetPort: 31002
   selector:
     service: mariadb
