@@ -3,6 +3,7 @@ kind: Service
 metadata:
   name: redis-service
 spec:
+  type: NodePort
   ports:
     - port: 6666
       protocol: TCP
