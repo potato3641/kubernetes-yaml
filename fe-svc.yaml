@@ -8,6 +8,7 @@ spec:
   type: nodePort
   ports:
     - port: 80
+      nodePort: 31080
       protocol: TCP
   selector:
     app: fe42

@@ -8,6 +8,7 @@ spec:
   type: nodePort
   ports:
     - port: 6666
+      nodePort: 31666
       protocol: TCP
   selector:
     app: redis
