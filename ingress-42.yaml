@@ -8,7 +8,7 @@ metadata:
     nginx.ingress.kubernetes.io/ssl-redirect: "false"
 spec:
   rules:
-    - host: *
+    - host: kube.people42.com
       http:
         paths:
           - path: /fe42
