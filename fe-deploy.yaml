@@ -18,6 +18,7 @@ spec:
       containers:
         - name: fe42
           image: 15.164.102.222:1588/return/fe
+          imagePullPolicy: Always
           ports:
             - containerPort: 80
               protocol: TCP
