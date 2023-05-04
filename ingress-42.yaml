@@ -11,28 +11,28 @@ spec:
   rules:
     - http:
         paths:
-          - path: /fe42
+          - path: /fe42/
             pathType: Prefix
             backend:
               service:
                 name: fe42-service
                 port:
                   number: 80
-          - path: /be42
+          - path: /be42/
             pathType: Prefix
             backend:
               service:
                 name: be42-service
                 port:
                   number: 8080
-          - path: /redis
+          - path: /redis/
             pathType: Prefix
             backend:
               service:
                 name: redis-service
                 port:
                   number: 6666
-          - path: /mariadb
+          - path: /mariadb/
             pathType: Prefix
             backend:
               service:
