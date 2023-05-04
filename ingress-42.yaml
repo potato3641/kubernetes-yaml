@@ -4,21 +4,21 @@ metadata:
   name: people-ingress
   annotations:
     kubernetes.io/ingress.class: "nginx"
-    ingress.kubernetes.io/rewrite-target: /
+    ingress.kubernetes.io/rewrite-target: /$1
     nginx.ingress.kubernetes.io/ssl-redirect: "false"
 spec:
   ingressClassName: nginx
   rules:
     - http:
         paths:
-          - path: /
+          - path: /(.*)
             pathType: Prefix
             backend:
               service:
                 name: fe42-service
                 port:
                   number: 80
-          - path: /be42
+          - path: /be42/(.*)
             pathType: Prefix
             backend:
               service:
@@ -32,7 +32,7 @@ spec:
                 name: redis-service
                 port:
                   number: 6666
-          - path: /mariadb
+          - path: /mariadb/(.*)
             pathType: Prefix
             backend:
               service:
