@@ -8,17 +8,17 @@ metadata:
     nginx.ingress.kubernetes.io/ssl-redirect: "false"
 spec:
   rules:
-    - host: kube.people42.com
+    - host: *
       http:
         paths:
-          - path: /
+          - path: /fe42
             pathType: Prefix
             backend:
               service:
                 name: fe42-service
                 port:
                   number: 80
-          - path: /be42/
+          - path: /be42
             pathType: Prefix
             backend:
               service:
