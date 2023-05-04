@@ -8,6 +8,5 @@ spec:
   ports:
     - port: 3333
       targetPort: 3333
-      protocol: TCP
   selector:
     app: mariadb

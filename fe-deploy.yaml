@@ -21,7 +21,6 @@ spec:
           imagePullPolicy: Always
           ports:
             - containerPort: 80
-              protocol: TCP
           volumeMounts:
             - name: fe42-storage
               mountPath: /usr/share/nginx/html/firebase-messaging-sw.js

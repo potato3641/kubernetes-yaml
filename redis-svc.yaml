@@ -8,6 +8,5 @@ spec:
   ports:
     - port: 6666
       targetPort: 6666
-      protocol: TCP
   selector:
     app: redis
