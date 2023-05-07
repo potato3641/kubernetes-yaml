@@ -11,16 +11,9 @@ spec:
       labels:
         app: fe42
     spec:
-      volumes:
-        - name: fe42-storage
-          hostPath:
-            path: /private/firebase-messaging-sw.js
       containers:
         - name: fe42
           image: 15.164.102.222:1588/return/fe
           imagePullPolicy: Always
           ports:
             - containerPort: 80
-          volumeMounts:
-            - name: fe42-storage
-              mountPath: /usr/share/nginx/html/firebase-messaging-sw.js
