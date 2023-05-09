@@ -7,14 +7,9 @@ metadata:
     ingress.kubernetes.io/rewrite-target: /
     nginx.ingress.kubernetes.io/ssl-redirect: "false"
 spec:
-  tls:
-  - hosts:
-    - kube.people42.com
-    secretName: kube-tls
   ingressClassName: nginx
   rules:
-    - host: kube.people42.com
-      http:
+    - http:
         paths:
           - path: /
             pathType: Prefix
@@ -34,14 +29,9 @@ metadata:
     nginx.ingress.kubernetes.io/use-regex: "true"
     nginx.ingress.kubernetes.io/ssl-redirect: "false"
 spec:
-  tls:
-  - hosts:
-    - kube.people42.com
-    secretName: kube-tls
   ingressClassName: nginx
   rules:
-    - host: kube.people42.com
-      http:
+    - http:
         paths:
           - path: /be42/(.*)
             pathType: Prefix
@@ -57,19 +47,15 @@ metadata:
   name: redis-ing
   annotations:
     kubernetes.io/ingress.class: "nginx"
-    ingress.kubernetes.io/rewrite-target: /redis/
+    ingress.kubernetes.io/rewrite-target: /$1
+    nginx.ingress.kubernetes.io/use-regex: "true"
     nginx.ingress.kubernetes.io/ssl-redirect: "false"
 spec:
-  tls:
-  - hosts:
-    - kube.people42.com
-    secretName: kube-tls
   ingressClassName: nginx
   rules:
-    - host: kube.people42.com
-      http:
+    - http:
         paths:
-          - path: /redis/
+          - path: /redis/(.*)
             pathType: Prefix
             backend:
               service:
@@ -83,19 +69,15 @@ metadata:
   name: mariadb-ing
   annotations:
     kubernetes.io/ingress.class: "nginx"
-    ingress.kubernetes.io/rewrite-target: /mariadb/
+    ingress.kubernetes.io/rewrite-target: /$1
+    nginx.ingress.kubernetes.io/use-regex: "true"
     nginx.ingress.kubernetes.io/ssl-redirect: "false"
 spec:
-  tls:
-  - hosts:
-    - kube.people42.com
-    secretName: kube-tls
   ingressClassName: nginx
   rules:
-    - host: kube.people42.com
-      http:
+    - http:
         paths:
-          - path: /mariadb/
+          - path: /mariadb/(.*)
             pathType: Prefix
             backend:
               service:
