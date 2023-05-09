@@ -18,6 +18,7 @@ spec:
         - name: https-secret-volume
           hostPath:
             path: /home/ubuntu/tls
+            type: Directory
       containers:
         - name: lb42
           image: nginx
