@@ -11,6 +11,10 @@ spec:
       labels:
         app: be42
     spec:
+      dnsPolicy: Default
+      dnsConfig:
+        nameservers:
+          - 8.8.8.8
       containers:
         - name: be42
           image: 15.164.102.222:1588/return/be
