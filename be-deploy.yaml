@@ -3,6 +3,7 @@ kind: Deployment
 metadata:
   name: be42-deploy
 spec:
+  replicas: 3
   selector:
     matchLabels:
       app: be42

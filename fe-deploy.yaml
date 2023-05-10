@@ -3,6 +3,7 @@ kind: Deployment
 metadata:
   name: fe42-deploy
 spec:
+  replicas: 3
   selector:
     matchLabels:
       app: fe42
